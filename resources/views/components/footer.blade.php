@@ -1,0 +1,5 @@
+<footer>
+    <p>ALL ASPECTS OF THIS WEBSITE DESIGNED AND IMPLEMENTED BY</p>
+    <p>AIDEN REDMOND ©2024</p>
+</footer>
+<br>

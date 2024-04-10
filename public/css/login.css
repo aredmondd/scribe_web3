@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+    font-size: 55px;
+    margin-top: 50px;
+    font-weight: 500;
+}
+
+form {
+    margin-top: 15px;
+    text-align: center;
+}
+
+input {
+    background: var(--white);
+    border: 1px solid var(--onyx);
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+input::placeholder {
+    font-size: 20px;
+}
+
+button {
+    color: var(--white);
+    background: var(--purple);
+    border: 0px;
+    padding: 5px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 25px 0px 15px 0px;
+}
+
+.signupLink {
+    text-decoration: none;
+    color: var(--onyx);
+    box-shadow: 0px 2px 0px 0px var(--light_purple);
+}
+
+.center {
+    text-align: center;
+}

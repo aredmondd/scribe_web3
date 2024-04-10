@@ -1,0 +1,84 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    border: 1px solid var(--onyx);
+    padding: 10px;
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    text-align: center;
+    border-bottom: 1px solid var(--onyx);
+}
+
+.options > p {
+    padding: 15px;
+}
+
+.options > p:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fields > form {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--onyx);
+}
+
+input {
+    background: var(--white);
+    border: 1px solid var(--onyx);
+    font-size: 20px;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+input::placeholder {
+    font-size: 20px;
+    color: grey;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+textarea {
+    background: var(--white);
+    border: 1px solid var(--onyx);
+    text-align: center;
+    margin-top: 5px;
+}
+
+.fields > form > button {
+    background: var(--light_purple);
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+textarea {
+    resize:none;
+    font-size: 20px;
+    padding: 5px;
+}
+
+
+textarea:focus {
+    outline: none;
+}

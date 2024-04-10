@@ -1,0 +1,72 @@
+.filters {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    outline: 1px solid var(--onyx);
+    padding: 20px 0px;
+}
+
+h2, .filters > form {
+    margin-left: 20px;
+}
+
+input {
+    background: var(--white);
+    padding: 10px;
+    border: 1px solid var(--onyx);
+}
+
+h2, .fields > form, input {
+    display: inline-block;
+}
+
+.right {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.right > button, .filters > button {
+    border: none;
+    padding: 10px;
+    border-radius: 100px;
+    transition: all 0.25s linear;
+    font-size: 15px;
+}
+
+.right > button:hover, .filters > button:hover {
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: all 0.25s linear;
+    cursor: pointer;
+}
+
+.table {
+    text-align: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid var(--onyx);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+    text-decoration: none;
+    color: var(--onyx);
+}
+
+.row > p {
+    border-right: 1px solid var(--onyx);
+    border-bottom: 1px solid var(--onyx);
+    padding: 10px;
+}
+
+.row:hover {
+    background-color: var(--light_purple);
+    cursor: pointer;
+}

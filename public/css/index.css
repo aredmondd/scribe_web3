@@ -1,0 +1,129 @@
+.container {
+    display: grid;
+    grid-template-columns: 20fr 11fr;
+    outline: 1px solid var(--onyx);
+    margin-top: 25px;
+}
+
+.top_left {
+    grid-column: 1;
+    padding: 10px;
+}
+
+.top_right {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--onyx);
+    text-align: center;
+}
+
+.right {
+    position: relative;
+    overflow: hidden; /* Hide overflowing gradient */
+    z-index: 0; /* Ensure .right is below h3 elements */    
+    background-color: transparent;
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.right > h3 {
+    font-size: 36px;
+    font-weight: 400;
+    text-align: right;
+}
+
+.ad > img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+h4 {
+    color: var(--purple);
+    font-family: 'Young Serif', serif;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.ad > a {
+    text-decoration: none;
+    color: var(--onyx);
+    box-shadow: 0px 2px 0px 0px var(--light_purple);
+}
+
+.play.hidden {
+    opacity: 0;
+}
+
+
+
+.middle {
+    border-bottom: 1px solid var(--onyx);
+    text-align: center;
+}
+
+.middle > h1 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.middle > h1 > a {
+    color: var(--purple);
+}
+
+.text > p {
+    font-size: 20px;
+}
+
+.bottom_container {
+    display: grid;
+    grid-template-columns: 11fr 20fr;
+    border-bottom: 1px solid var(--onyx);
+    margin-bottom: 15px;
+}
+
+.bottom_left {
+    grid-column: 1;
+    padding: 10px;
+}
+
+.bottom_right {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--onyx);
+    text-align: center;
+}
+
+.images {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.images img {
+    height: 300px;
+    margin-left: -70px;
+}
+
+.images img:hover {
+    box-shadow: 0 0 10px solid var(--light_purple);
+}
+
+.bumper {
+    margin-right: 70px;
+}
+
+.bottom_text {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 15px;
+    font-weight: 500;
+}
