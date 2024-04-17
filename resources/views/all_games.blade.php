@@ -1,7 +1,7 @@
 <x-wrapper css="css/games.css">
     <div class="filters">
         <h2 id="filterTitle">Backlog</h2>
-        <form method="GET" action="/games" id="searchForm">
+        <form method="GET" action="/all_games" id="searchForm">
             <input id="searchInput" type="text" name="search" placeholder="search your games" value="{{ request()->input('search') }}">
         </form>
         <div class="right">
@@ -14,12 +14,11 @@
     </div>
     <div class="table">
         <div class="header">
-            <div class="col">NAME</div>
+            <div class="col" style="text-align: left; padding-left: 10px">NAME</div>
             <div class="col">EST LENGTH</div>
             <div class="col">OWNED</div>
             <div class="col">PLATFORM</div>
             <div class="col">COST</div>
-            <div class="col">WHY</div>
         </div>
     </div>
 
