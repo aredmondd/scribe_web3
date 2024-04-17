@@ -18,7 +18,7 @@ class SessionController extends Controller
 
         auth()->login($user);
 
-        return redirect('/games');
+        return redirect('/all_games');
     }
 
     public function destroy() {
