@@ -75,6 +75,7 @@ h4 {
 
 .middle > h1 > a {
     color: var(--purple);
+    text-decoration: none;
 }
 
 .text > p {
