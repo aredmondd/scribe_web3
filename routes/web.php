@@ -34,5 +34,3 @@ Route::post('/add', [GameController::class, 'store']);
 Route::post('/signup', [SessionController::class, 'create']);
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
-
-

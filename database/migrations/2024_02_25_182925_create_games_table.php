@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('cost')->nullable();
             $table->longText('why');
 
-            $table->boolean("is_backlogged")->default(false);
+            $table->boolean("is_backlogged")->default(true);
             $table->boolean("is_currently_playing")->default(false);
             $table->boolean("is_dropped")->default(false);
             $table->boolean("is_shelved")->default(false);
@@ -39,6 +39,7 @@ return new class extends Migration
 
             // RELATIONSHIPS
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
