@@ -20,19 +20,22 @@ return new class extends Migration
             $table->integer('cost')->nullable();
             $table->longText('why');
 
-            $table->date('date_started')->nullable();
-            $table->date('date_dropped')->nullable();
-            $table->date('date_retired')->nullable();
-            $table->date('date_finished')->nullable();
+            $table->boolean("is_backlogged")->default(false);
+            $table->boolean("is_currently_playing")->default(false);
+            $table->boolean("is_dropped")->default(false);
+            $table->boolean("is_shelved")->default(false);
+            $table->boolean("is_beat")->default(false);
 
-            $table->integer('hours_played')->nullable();
-            $table->longText('reason_dropped')->nullable();
-            $table->longText('reason_retired')->nullable();
-            $table->boolean('want_to_revisit')->nullable();
-            $table->boolean('did_100%')->nullable();
-            $table->longText('review')->nullable();
-            $table->integer('star_score')->nullable();
-            $table->timestamps();
+            $table->date("date_backlogged")->nullable();
+            $table->date("date_started_playing")->nullable();
+            $table->date("date_finished_playing")->nullable();
+            
+            $table->integer("hours_played")->nullable();
+
+            $table->string("why_backlogged")->nullable();
+            $table->string("why_dropped")->nullable();
+            $table->string("why_shelved")->nullable();
+            $table->string("review")->nullable();
 
             // RELATIONSHIPS
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

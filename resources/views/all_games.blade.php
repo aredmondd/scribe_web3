@@ -44,12 +44,4 @@
         });
     });
 
-    /* document.addEventListener('DOMContentLoaded', function() {
-        const searchInput = document.getElementById('searchInput');
-        const searchForm = document.getElementById('searchForm');
-
-        searchInput.addEventListener('input', function() {
-            searchForm.submit();
-        });
-    }); */
 </script>
