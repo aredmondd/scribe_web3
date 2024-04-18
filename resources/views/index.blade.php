@@ -7,7 +7,7 @@
                 <h3 class="play">WANT TO PLAY*</h3>
                 <h3 class="play">ARE PLAYING*</h3>
                 <h3 class="play">DROPPED*</h3>
-                <h3 class="play">RETIRED*</h3>
+                <h3 class="play">SHELVED*</h3>
                 <h3 class="play">COMPLETED*</h3>
             </div>
         </div>
@@ -31,7 +31,7 @@
                 <div class="bumper"></div>
                 <img src="images/P3R.jpeg" alt="" class="persona 3 reload cover">
                 <img src="images/celeste.png" alt="" class="celeste cover">
-                <img src="images/neon_white.png" alt="" class="neon white cover">
+                <img src="images/kz.jpg" alt="" class="neon white cover">
             </div>
             <div class="bottom_text">
                 ADD ANY GAME YOU WANT.

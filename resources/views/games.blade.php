@@ -1,4 +1,4 @@
-<x-wrapper css="../css/games.css">
+<x-wrapper css="../../css/games.css">
     <div class="filters">
         <h2 id="filterTitle">{{$title_text}}</h2>
         <form method="GET" action="/games" id="searchForm">
@@ -14,11 +14,11 @@
     </div>
     <div class="table">
         <div class="header">
-            <div class="col" style="text-align: left; padding-left: 10px">NAME</div>
-            <div class="col">EST LENGTH</div>
-            <div class="col">OWNED</div>
-            <div class="col">PLATFORM</div>
-            <div class="col">COST</div>
+            <div class="col" style="text-align: left; padding-left: 10px"><a href="/games/{{$current_location}}/sortby=name">NAME</a></div>
+            <div class="col"><a href="/games/{{$current_location}}/sortby=length">EST LENGTH</a></div>
+            <div class="col"><a href="/games/{{$current_location}}/sortby=owned">OWNED</a></div>
+            <div class="col"><a href="/games/{{$current_location}}/sortby=platform">PLATFORM</a></div>
+            <div class="col"><a href="/games/{{$current_location}}/sortby=cost">COST</a></div>
             <div class="col">UPDATE</div>
             <div class="col">DELETE</div>
         </div>

@@ -5,7 +5,7 @@
     <p>{{ $game->is_owned === 1 ? 'YES' : 'NO' }}</p>
     <p>{{ $game->platform }}</p>
     <p>{{ $game->cost === null ? 'N/A' : '$' . $game->cost }}</p>
-    <p><a><span class="material-symbols-outlined">sync_alt</span></a></p>
+    <p><a href="/games/update/{{$game->id}}"><span class="material-symbols-outlined">sync_alt</span></a></p>
     <p><a href="/games/delete/{{$game->id}}"><span class="material-symbols-outlined">delete</span></a></p>
 </div>
 

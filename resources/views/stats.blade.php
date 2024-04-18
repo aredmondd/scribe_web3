@@ -9,7 +9,7 @@
             <p>probably more than last year.</p>
         </div>
         <div class="card">
-            <p>it took</p>
+            <p>you played for</p>
             <h3><span class="lightpurple">{{ $hoursPlayed }}</span> HOURS</h3>
             <p>sheeeeeeeesh</p>
         </div>
