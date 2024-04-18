@@ -18,7 +18,7 @@ class SessionController extends Controller
 
         auth()->login($user);
 
-        return redirect('/all_games');
+        return redirect('/games');
     }
 
     public function destroy() {
@@ -34,7 +34,7 @@ class SessionController extends Controller
         ]);
 
         if (auth()->attempt($attributes)) {
-            return redirect('/');
+            return redirect('/games');
         }
 
         throw ValidationException::withMessages([

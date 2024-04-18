@@ -43,7 +43,7 @@ class GameController extends Controller
             'why' => request('why')
         ]);
 
-        return redirect('/all_games');
+        return redirect('/games');
     }
 
     public function index(Request $request) {
@@ -61,10 +61,10 @@ class GameController extends Controller
                             })
                             ->get();
 
-            return view('all_games', ['games' => $userGames, "title_text" => "Backlog"]);
+            return view('games', ['games' => $userGames, "title_text" => "All Games"]);
         }
 
-        return view('all_games', [ "games" => $games, "title_text" => "Backlog"]);
+        return view('games', [ "games" => $games, "title_text" => "All Games"]);
     }
 
     public function stats() {
@@ -152,6 +152,15 @@ class GameController extends Controller
 
         $filteredGames = Game::where($table_column, 1)->get();
         
-        return view('all_games', [ "games" => $filteredGames, "title_text" => $title_text]);
+        return view('games', [ "games" => $filteredGames, "title_text" => $title_text]);
+    }
+
+    public function destroy(Request $request) {
+        $path = $request->path();
+        $id = substr($path, strrpos($path, '/') + 1);
+        $game = Game::find($id);
+        $game->delete();
+
+        return redirect()->back();
     }
 }
