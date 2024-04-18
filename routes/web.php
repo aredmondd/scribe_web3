@@ -25,7 +25,12 @@ Route::get('/login', function () { return view('login'); });
 Route::get('/signup', function () { return view('sign_up'); });
 Route::get('/aidenredmond', function() { return view('aidenredmond'); });
 Route::get('/add', function() { return view('add'); })->middleware('authCheck');
-Route::get('/all_games/{id}', [GameController::class, 'gameUpdate'])->middleware('authCheck');
+
+// this needs to be fixed because it's gonna catch the same things as the game routes, except deny access since it thinks its a game ID
+// Route::get('/all_games/{id}', [GameController::class, 'gameUpdate'])->middleware('authCheck');
+
+//GAME ROUTES
+Route::get('/all_games/{desc}', [GameController::class, 'displayGames'])->middleware('authCheck');
 
 // ADD GAME
 Route::post('/add', [GameController::class, 'store']);

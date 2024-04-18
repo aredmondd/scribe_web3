@@ -61,10 +61,10 @@ class GameController extends Controller
                             })
                             ->get();
 
-            return view('all_games', ['games' => $userGames]);
+            return view('all_games', ['games' => $userGames, "title_text" => "Backlog"]);
         }
 
-        return view('all_games', [ "games" => $games]);
+        return view('all_games', [ "games" => $games, "title_text" => "Backlog"]);
     }
 
     public function stats() {
@@ -112,5 +112,46 @@ class GameController extends Controller
         }
 
         return view('game', ["currentGame" => $currentGame]);
+    }
+
+    public function displayGames(Request $request) {
+        $path = $request->path();
+        $description = substr($path, strrpos($path, '/') + 1);
+        $table_column = null;
+        $title_text = null;
+
+        switch ($description) {
+            case "backlog":
+                $table_column = "is_backlogged";
+                $title_text = "Backlog";
+                break;
+            case "currently_playing":
+                $table_column = "is_currently_playing";
+                $title_text = "Currently Playing";
+                break;
+            case "dropped":
+                $table_column = "is_dropped";
+                $title_text = "Dropped";
+                break;
+            case "shelved":
+                $table_column = "is_shelved";
+                $title_text = "Shelved";
+                break;
+            case "beat":
+                $table_column = "is_beat";
+                $title_text = "Beat";
+                break;
+        }
+
+        if ($table_column == null) {
+            abort(404);
+        }
+
+        $user = auth()->user();
+        $games = $user->Game;
+
+        $filteredGames = Game::where($table_column, 1)->get();
+        
+        return view('all_games', [ "games" => $filteredGames, "title_text" => $title_text]);
     }
 }

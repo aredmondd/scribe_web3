@@ -27,7 +27,7 @@ h2, .fields > form, input {
     margin-right: 20px;
 }
 
-.right > button, .filters > button {
+a > button {
     border: none;
     padding: 10px;
     border-radius: 100px;
@@ -35,7 +35,7 @@ h2, .fields > form, input {
     font-size: 15px;
 }
 
-.right > button:hover, .filters > button:hover {
+a > button:hover {
     padding-left: 20px;
     padding-right: 20px;
     transition: all 0.25s linear;
