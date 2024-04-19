@@ -96,9 +96,6 @@ h4 {
 
 .bottom_right {
     grid-column: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-left: 1px solid var(--onyx);
     text-align: center;
 }
@@ -127,4 +124,8 @@ h4 {
     font-size: 25px;
     margin-top: 15px;
     font-weight: 500;
+}
+
+.bottom_right_images {
+
 }

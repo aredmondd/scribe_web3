@@ -27,24 +27,27 @@
 
     <div class="bottom_container">
         <div class="bottom_left">
+            <div class="bottom_text">
+                ADD ANY GAME YOU WANT
+            </div>
+            <br>
             <div class="images">
                 <div class="bumper"></div>
                 <img src="images/P3R.jpeg" alt="" class="persona 3 reload cover">
                 <img src="images/celeste.png" alt="" class="celeste cover">
                 <img src="images/kz.jpg" alt="" class="neon white cover">
             </div>
-            <div class="bottom_text">
-                ADD ANY GAME YOU WANT.
-            </div>
         </div>
 
         <div class="bottom_right">
-            <p>bottom right</p>
+            <div class="bottom_text">
+                GET YEARLY STATS
+            </div>
+            <br>
+            <div class="bottom_right_images">
+                <img src="images/stats_ex.png" alt="example of the stats page" width="700px" style="margin-top: 25px;">
+            </div>
         </div>
-    </div>
-
-    <div class="middle">
-        <h1>ORGANIZE YOUR CHAOS. USE <a href="/add">SCRIBE</a>.</h1>
     </div>
 
     <br>
