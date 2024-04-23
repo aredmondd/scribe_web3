@@ -80,3 +80,8 @@ a > button:hover {
 span {
     color: var(--onyx);
 }
+
+.header > div >  a {
+    color: var(--onyx);
+    text-decoration: none;
+}
