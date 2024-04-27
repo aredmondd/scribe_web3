@@ -70,26 +70,27 @@ class GameController extends Controller
     * Adds a game to the database based on the user's inputs.
     * @param Request $request The URL information
     */
-    public function index(Request $request) {
-        $user = auth()->user();
-        $games = $user->Game;
+    // public function index(Request $request) {
+    //     dd("index");
+    //     $user = auth()->user();
+    //     $games = $user->Game;
 
-        if (request()->input("search") != null) {
-            $search = $request->input('search');
-            $userId = auth()->user()->id;
+    //     if (request()->input("search") != null) {
+    //         $search = $request->input('search');
+    //         $userId = auth()->user()->id;
 
-            $userGames = Game::where('user_id', $userId)
-                            ->where(function($query) use ($search) {
-                                $query->where('name', 'like', "%$search%")
-                                    ->orWhere('why', 'like', "%$search%");
-                            })
-                            ->get();
+    //         $userGames = Game::where('user_id', $userId)
+    //                         ->where(function($query) use ($search) {
+    //                             $query->where('name', 'like', "%$search%")
+    //                                 ->orWhere('why', 'like', "%$search%");
+    //                         })
+    //                         ->get();
 
-            return view('games', ['games' => $userGames, "title_text" => "All Games"]);
-        }
+    //         return view('games', ['games' => $userGames, "title_text" => "All Games"]);
+    //     }
 
-        return view('games', [ "games" => $games, "title_text" => "All Games"]);
-    }
+    //     return view('games', [ "games" => $games, "title_text" => "All Games"]);
+    // }
 
     /**
     * STATS
@@ -133,7 +134,12 @@ class GameController extends Controller
      */
     public function displayGames(Request $request) {
         // for aesthetic purposes and display on the games.blade.php page
-        $description = $request->route()->parameters["desc"];
+        if (isset($request->route()->parameters["desc"])) {
+            $description = $request->route()->parameters["desc"];
+        }
+        else {
+            $description = "backlog";
+        }
         $table_column = null;
         $title_text = null;
         $current_location = null;

@@ -14,7 +14,7 @@
     </div>
     <div class="table">
         <div class="header">
-            <div class="col" style="text-align: left; padding-left: 10px"><a href="/games/{{$current_location}}/sortby=name">NAME</a></div>
+            <div class="col" style="text-align: left; padding-left: 10px"><a href="/games/{{$current_location}}?sortby=name">NAME</a></div>
             <div class="col"><a href="/games/{{$current_location}}/sortby=length">EST LENGTH</a></div>
             <div class="col"><a href="/games/{{$current_location}}/sortby=owned">OWNED</a></div>
             <div class="col"><a href="/games/{{$current_location}}/sortby=platform">PLATFORM</a></div>
