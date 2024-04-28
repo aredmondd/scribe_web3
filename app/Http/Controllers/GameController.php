@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Auth;
 use App\Models\Game;
+use App\Models\User;
 
 class GameController extends Controller
 {
@@ -97,8 +98,15 @@ class GameController extends Controller
     *
     * Loads and displays user stats on stats.blade.php
     */
-    public function stats() {
-        $user = auth()->user();
+    public function stats(Request $request) {
+        $URI = $request->route()->uri;
+        $user = null;
+        if ($URI == "aidenredmond") {
+            $user = User::find(1);
+        }
+        else {
+            $user = auth()->user();
+        }
         $games = $user->Game;
 
         $numCompleted = 0; 
@@ -123,7 +131,12 @@ class GameController extends Controller
             $successRate = ($numCompleted / ($numCompleted + $numDropped) * 100);
         }
 
-        return view('stats', ["games" => $games, "numComplete" => $numCompleted, "hoursPlayed" => $hoursPlayed, "numDropped" => $numDropped ,"successRate" => $successRate]);
+        if ($URI == "aidenredmond") {
+            return view('aidenredmond', ["games" => $games, "numComplete" => $numCompleted, "hoursPlayed" => $hoursPlayed, "numDropped" => $numDropped ,"successRate" => $successRate]);
+        }
+        else {
+            return view('stats', ["games" => $games, "numComplete" => $numCompleted, "hoursPlayed" => $hoursPlayed, "numDropped" => $numDropped ,"successRate" => $successRate]);
+        }
     }
 
     /**
@@ -184,8 +197,19 @@ class GameController extends Controller
 
         // moving from currently playing to final three. //TODO this will need to be updated once the user can select their own data
         else if ($game->is_currently_playing) {
-            $game->is_currently_playing = 0;
-            $game->is_beat = 1;
+            // modal pop up with options for which alley
+
+            // if option is "dropped"
+                // $game->is_currently_playing = 0;
+                // $game->is_beat = 1;
+
+            // if option is "shelved"
+                // $game->is_currently_playing = 0;
+                // $game->is_shelved = 1;
+
+            // if option is "dropped"
+                // $game->is_currently_playing = 0;
+                // $game->is_dropped = 1;
         }
 
         $game->save();

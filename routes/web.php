@@ -23,7 +23,7 @@ Route::get('/games', [GameController::class, 'displayGames'])->middleware('authC
 Route::get('/stats', [GameController::class, 'stats'])->middleware('authCheck');
 Route::get('/login', function () { return view('login'); });
 Route::get('/signup', function () { return view('sign_up'); });
-Route::get('/aidenredmond', function() { return view('aidenredmond'); });
+Route::get('/aidenredmond', [GameController::class, 'stats']);
 Route::get('/add', function() { return view('add'); })->middleware('authCheck');
 Route::get('/about', function() { return view('about'); });
 

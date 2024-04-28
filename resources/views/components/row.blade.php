@@ -8,5 +8,3 @@
     <p><a href="/games/update/{{$game->id}}"><span class="material-symbols-outlined">sync_alt</span></a></p>
     <p><a href="/games/delete/{{$game->id}}"><span class="material-symbols-outlined">delete</span></a></p>
 </div>
-
-<!-- href="/all_games/{{$game->id}} -->
