@@ -31,7 +31,7 @@ Route::get('/about', function() { return view('about'); });
 Route::get('/games/{desc}', [GameController::class, 'displayGames'])->middleware('authCheck');
 Route::get('/games/delete/{id}', [GameController::class, 'destroy'])->middleware('authCheck');
 Route::get('/games/update/{id}', [GameController::class, 'update'])->middleware('authCheck');
-Route::get('/games/{desc}/sortby={sortby_field}', [GameController::class, 'sort'])->middleware('authCheck');
+Route::get('/games/{desc}/sortby={sortby_field}/order={order}', [GameController::class, 'sort'])->middleware('authCheck');
 
 // ADD GAME
 Route::post('/add', [GameController::class, 'store']);

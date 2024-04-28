@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Models\Game;
 use App\Models\User;
 
@@ -174,7 +175,7 @@ class GameController extends Controller
         $games = $user->Game;
         $filteredGames = Game::where($table_column, 1)->get();
         
-        return view('games', [ "games" => $filteredGames, "title_text" => $title_text, "current_location" => $current_location]);
+        return view('games', [ "games" => $filteredGames, "title_text" => $title_text, "current_location" => $current_location, "order" => "asc"]);
     }
 
     /**
@@ -197,6 +198,8 @@ class GameController extends Controller
 
         // moving from currently playing to final three. //TODO this will need to be updated once the user can select their own data
         else if ($game->is_currently_playing) {
+            $game->is_currently_playing = 0;
+            $game->is_dropped = 1;
             // modal pop up with options for which alley
 
             // if option is "dropped"
@@ -226,6 +229,7 @@ class GameController extends Controller
         // figure out what to sort by
         $sortby = $request->route()->parameters["sortby_field"];
         $sortby_column = null;
+        $sortby_order = $request->route()->parameters["order"];
 
         // figure out what we are sorting by
         switch($sortby) {
@@ -274,10 +278,23 @@ class GameController extends Controller
         $games = $user->Game;
         $filteredGames = Game::where($table_column, 1)->get();
 
-        // sort the games that are under the current button
-        $sortedFilteredGames = $filteredGames->sortByDesc($sortby_column); 
+        $sortedFilteredGames = null;
+        $order = "asc";
 
-        return view('games', [ "games" => $sortedFilteredGames, "title_text" => $title_text, "current_location" => $current_location]);
+        // sort the games that are under the current button
+        if ($sortby_order == "asc") {
+            $sortedFilteredGames = $filteredGames->sortByDesc($sortby_column)->reverse();
+            $order = "dsc";
+        }
+        else if ($sortby_order == "dsc") {
+            $sortedFilteredGames = $filteredGames->sortByDesc($sortby_column);
+            $order = "asc";
+        }
+        else {
+            abort(404);
+        }
+
+        return view('games', [ "games" => $sortedFilteredGames, "title_text" => $title_text, "current_location" => $current_location, "order" => $order]);
     }
 
     /**
